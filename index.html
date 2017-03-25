@@ -6,7 +6,17 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>gao gao</title>
+    <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
     <script>
+        function sayStuff(stuffToSay) {
+            if ('speechSynthesis' in window) {
+                var utterance = new SpeechSynthesisUtterance(words[i]);
+                utterance.text = stuffToSay;
+                window.speechSynthesis.speak(utterance);
+            } else {
+                responsiveVoice.speak(stuffToSay);
+            }
+        }
         var words = ["What the fuck did you just fucking say about me, you little bitch?",
             "I’ll have you know I graduated top of my class in the Navy Seals, and I’ve been involved in numerous secret raids on Al-Quaeda, and I have over 300 confirmed kills.",
             "I am trained in gorilla warfare and I’m the top sniper in the entire US armed forces.",
@@ -23,10 +33,10 @@
             "But you couldn’t, you didn’t, and now you’re paying the price, you goddamn idiot.",
             "I will shit fury all over you and you will drown in it.",
             "You’re fucking dead, kiddo."];
+
+        responsiveVoice.setDefaultVoice("Japanese Female");
         for (i = 0; i < words.length; i++) {
-            var utterance = new SpeechSynthesisUtterance();
-            utterance.text = words[i];
-            window.speechSynthesis.speak(utterance);
+            sayStuff(words[i]);
         }
     </script>
 </head>
