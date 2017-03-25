@@ -8,15 +8,6 @@
     <title>gao gao</title>
     <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
     <script>
-        function sayStuff(stuffToSay) {
-            if ('speechSynthesis' in window) {
-                var utterance = new SpeechSynthesisUtterance(words[i]);
-                utterance.text = stuffToSay;
-                window.speechSynthesis.speak(utterance);
-            } else {
-                responsiveVoice.speak(stuffToSay);
-            }
-        }
         var words = ["What the fuck did you just fucking say about me, you little bitch?",
             "I’ll have you know I graduated top of my class in the Navy Seals, and I’ve been involved in numerous secret raids on Al-Quaeda, and I have over 300 confirmed kills.",
             "I am trained in gorilla warfare and I’m the top sniper in the entire US armed forces.",
@@ -33,11 +24,8 @@
             "But you couldn’t, you didn’t, and now you’re paying the price, you goddamn idiot.",
             "I will shit fury all over you and you will drown in it.",
             "You’re fucking dead, kiddo."];
-
         responsiveVoice.setDefaultVoice("Japanese Female");
-        for (i = 0; i < words.length; i++) {
-            sayStuff(words[i]);
-        }
+        responsiveVoice.speak(words.join(' '));
     </script>
 </head>
 <body>
